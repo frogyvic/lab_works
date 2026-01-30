@@ -1,12 +1,12 @@
 #include "MyString.hpp"
 #include <cstring>
-//дефолт конструктор
+//*дефолт конструктор
 MyString::MyString() : str_(nullptr), length(0){
     str_ = new char[1];
 
     // std::cerr<<"std ctor"<<std::endl;
 }
-//константный конструктор
+//*константный конструктор
 MyString::MyString(const char* str) : str_(nullptr), length(0){
     if (str) {
         length = strlen(str);
@@ -19,13 +19,13 @@ MyString::MyString(const char* str) : str_(nullptr), length(0){
 
     // std::cerr<<"cnst ctor"<<std::endl;
 }
-//конструктор копирования
+//*конструктор копирования
 MyString::MyString(const MyString& other) : str_(nullptr), length(other.length) {
     str_ = new char[length + 1];
     strcpy(str_, other.str_);
-    std::cerr<<"copy ctor"<<std::endl;
+    // std::cerr<<"copy ctor"<<std::endl;
 }
-//конструктор(оператор) присваивания
+//*конструктор(оператор) присваивания
 MyString& MyString::operator=(const MyString& other) {
     if (this != &other) {  
         delete[] str_;
@@ -36,7 +36,7 @@ MyString& MyString::operator=(const MyString& other) {
     // std::cerr<<"asign ctor"<<std::endl;
     return *this;  
 }
-//деструктор
+//*деструктор
 MyString::~MyString() {
     // std::cerr<<str_<<std::endl;
     delete[] str_;

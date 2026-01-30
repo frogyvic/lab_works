@@ -19,8 +19,12 @@ public:
     ~MyString();
 
     //геттеры
-    const char* c_str() const { return str_; }
-    size_t size() const { return length; }
+    const char* c_str() const { 
+        return str_;
+     }
+    size_t size() const { 
+        return length;
+     }
 
     //перегруженные операторы
     MyString operator+(const MyString& other) const;    // сложение строк
